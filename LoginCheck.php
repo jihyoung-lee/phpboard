@@ -1,15 +1,88 @@
 <?php
 
-session_start();
+include "session.php";
+include "mysqli_connect.php";
 $id = $_POST['id'];
 $pw = $_POST['pw'];
-include "mysqli_connect.php";
-
 
 $sql = "SELECT * FROM userinfo WHERE userid = '{$id}' AND userpw = '{$pw}'";
-$res = $ //여기서부터 수정 7/27
+$res = $mysqli->query($sql);
 
-/* [1]
+$row = $res->fetch_array(MYSQLI_ASSOC);
+
+if($row != null){
+    $_SESSION['userid'] = $row['userid'];
+
+
+    echo "<script>alert('반갑습니다.')</script>";
+    echo "<script>location.href='index.php';</script>";
+}
+else{
+    echo
+    "<script>
+      window.alert('아이디와 비밀번호가 잘못되었습니다.');
+      history.back(-1);
+    </script>";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+$check = "SELECT * FROM userinfo WHERE userid='$id' and userpw='$pw'";
+$result = mysqli_query($mysqli,$check);
+if(!$_POST['id'])
+{
+    echo
+    "<script>
+      window.alert('아이디를 입력하세요.');
+      history.back(-1);
+    </script>";
+}
+else if(!$_POST['pw'])
+{
+    echo
+    "<script>
+      window.alert('비밀번호를 입력하세요.');
+      history.back(-1);
+    </script>";
+}
+else
+{
+    if(!$result)
+    {
+        echo
+        "<script>
+        window.alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+        history.back(-1);
+      </script>";
+    }
+    else
+    {
+        $_SESSION['id']=$_POST['id'];
+        $_SESSION['pw']=$_POST['pw'];
+
+echo "<script>location.href='index.php';</script>";
+    }
+}
+
+
+/*if($row ! = null){
+    $_SESSION['ses_userid'] = $row['id'];
+    echo $_SESSION['ses_userid'].'님 안녕하세요';
+    echo '<a href="./sign'
+}
+*/
+
+/*[1]
 $check = "SELECT * FROM user_info WHERE userid='$id'";
 $result = mysqli_query($mysqli, $check);
 if ($result->num_rows==1) {
