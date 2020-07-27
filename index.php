@@ -4,7 +4,7 @@
     <title>Main Homepage</title>
 </head>
 <body>
-    <h1>test</h1>
+    <h1>이지형 게시판</h1>
     <? include 'i_check.php'; ?>
 </body>
 </html>
