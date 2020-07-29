@@ -10,9 +10,10 @@ if (!isset($_SESSION['userid'])) {
 } elseif (isset($_SESSION['userid'])) {
     $id = $_SESSION['userid'];
     echo $id;
-    echo "님";
+    echo "님 반갑습니다!";
     echo "<br>";
-    echo "<a href=logout.php><input type='button'value='로그아웃'></a>";
+    echo "<a href=logout.php><input type='button' value='로그 아웃'></a>";
+    echo " <a href=write.html><input type='button' value='글쓰기'></a>";
     echo "<br>";
    //구현 전 echo "<a href=userout.php>회원탈퇴</a>";
 }

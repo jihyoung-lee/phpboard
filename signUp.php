@@ -34,8 +34,8 @@ $query = "INSERT INTO userinfo (userid, userpw, name, email, permit) VALUES ('$i
 $signup = mysqli_query($mysqli,$query);
 
 if($signup) {
-    echo "회원가입 성공";
-    echo "<br>";
+    echo "<script>alert('회원가입이 완료되었습니다.')</script>";
+    echo "<script>location.href='index.php';</script>";
 } elseif (! $signup){
     echo "실패 원인 :";
     echo mysqli_error($mysqli);
