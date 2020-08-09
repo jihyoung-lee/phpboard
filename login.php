@@ -35,7 +35,9 @@
         <br />
         <table>
             <tr height="10">
+                <td> <input type="button" value="뒤로가기" onclick="history.back(-1);"></td>
                 <td><input type="submit" value="로그인"></td>
+                <td> <input type="button" value="회원가입" onclick="location='signUp.html'"></td>
             </tr>
         </table>
     </form>
