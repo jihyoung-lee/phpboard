@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Main Homepage</title>
 </head>
+<? include 'photo.php'; ?>
 <body>
 <center>
     <h1>게시판</h1>
@@ -26,6 +27,7 @@
             <td width="150">작성자</td>
             <td width="150">조회수</td>
             <td width="200">작성일</td>
+
             <? include 'list.php';?>
         </tr>
 
