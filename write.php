@@ -5,7 +5,7 @@ $title = $_POST['title'];
 $contents = $_POST['content'];
 include 'mysqli_connect.php';
 
-$query = "INSERT INTO list (userid, title, contents, listdate, viewcnt) VALUES ('$userid','$title','$contents',now(),0)";
+$query = "INSERT INTO list (userid_li, title, contents, listdate, viewcnt) VALUES ('$userid','$title','$contents',now(),0)";
 $write_up = mysqli_query($mysqli,$query);
 if($write_up) {
     echo "<script>alert('성공')</script>";
