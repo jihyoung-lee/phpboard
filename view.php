@@ -32,8 +32,8 @@ include 'session.php';
 
 
 
-if(isset($_SESSION['userid'])){ //세션은 잘 넘어오는데 글 작성자 아이디 값이 안넘어옴 ㅠㅠ
-    if($_SESSION['userid'] == 'test'){
+if(isset($_SESSION['userid'])){
+    if($_SESSION['userid'] === 'test'){
 
     echo "<td><form action='delete.php' method='get'>";
     echo "<input type='hidden' name='num' value='$num'>";
@@ -44,14 +44,29 @@ if(isset($_SESSION['userid'])){ //세션은 잘 넘어오는데 글 작성자 �
     echo "<input type='submit' value='수정하기'>";
     echo "</form><td>";
         echo "</table>";
+
+        //세션은 잘 넘어오는데 글 작성자 아이디 값이 안넘어옴 ㅠㅠ
     }
 }
+
 echo "<br />";
+$select_query2 = "select * from comment where list_no = $num";
+$result_set3 = mysqli_query($mysqli,$select_query2);
 echo "<table border='1' style='text-align: center'>";
-echo "<td width=\"50\"> 작성자 </td>";
-echo "<td width=\"450\"> 내용 </td>";
+echo "<td width=\"100\"> 작성자 </td>";
+echo "<td width=\"450\"> 댓글내용 </td>";
 echo "<td width=\"150\"> 작성시간 </td>";
-echo "<textarea style='width: 670px; height: 50px' name='content''></textarea>";
+echo "<form action=\"com.php\" method=\"post\">";
+echo "<input type='hidden' name='num' value='$num'>";
+echo "<textarea style='width: 670px; height: 50px' name='com''></textarea>";
+echo '   <input type="submit" value="댓글">';
+while ($row2 = mysqli_fetch_row($result_set3)){
+    echo "<tr>";
+    echo "<td style='width: 100px'>".$row2[2]."</td>";
+    echo "<td style='width: 450px'>".$row2[3]."</td>";
+    echo "<td style='width: 150px'>".$row2[4]."</td>";
+    echo "</tr>";
+}
 echo "</center>";
 ?>
 
