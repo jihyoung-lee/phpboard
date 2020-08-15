@@ -1,6 +1,8 @@
 <?php
 include 'mysqli_connect.php';
-include 'photo.php';
+
+
+include 'navbar.php';
 $num = $_GET['num'];
 $select_query = "select * from list where list_no = $num";
 $result_set = mysqli_query($mysqli,$select_query);
@@ -43,7 +45,6 @@ echo "<td width=\"50\">".$row[3]."</td>";
 
 echo"<table>";
 echo '<td></td><input type="button" value="글 목록" onclick="history.back(-1);"></td>';
-include 'session.php';
 
 
 
