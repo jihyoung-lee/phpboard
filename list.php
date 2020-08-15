@@ -26,7 +26,7 @@ while ($row = mysqli_fetch_row($result_set)){
     if(strlen($row[1])>20)
     {
         //title이 20을 넘어서면 ...표시
-        $row[1]=str_replace($row[1],mb_substr($row[1],0,20,"utf-8").".......",$row[1]);
+        $row[1]=str_replace($row[1],mb_substr($row[1],0,20,"utf-8")."...",$row[1]);
     }
     if($row[6]>0){ //댓글이 있으면 댓글 수 표시
         echo "<td style='width: 500px '><a href='view.php?num=$row[0]'>".$row[1]."(".$row[6].")";"</td>";
