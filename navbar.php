@@ -71,7 +71,7 @@ echo'         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span c
                            echo' <li><a href="write.html">Write</a></li>';
                             echo'  <li><a href="#">My profile</a></li>';
 
-                                $query_1 = "select * from list where userid_li like'%$id%'";
+                                $query_1 = "select * from list where userid_li like'$id'";
                                 $result= mysqli_query($mysqli,$query_1);
                                 $count = mysqli_num_rows($result);
                                 echo'<li><a href="#">My contents  <span class="badge">'.$count.'</span></a></li>';
