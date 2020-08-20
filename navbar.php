@@ -13,12 +13,11 @@
     <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
     <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+ <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 </head>
 <style>
 
@@ -40,7 +39,7 @@
             <a class="brand">PHP board</a>
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li class="active"><a href="index.php">Home</a></li>
+                    <li class=" hover  "><a href="index.php">Home</a></li>
                 </ul>
 
                 <ul class="nav pull-right">
@@ -56,7 +55,7 @@
 
                             echo   '<li ><a href="#"><span class="glyphicon glyphicon-off" ></span>  Welcome    '.$id.'!</a></li>';
                         }
-                        else{
+                      $id = $_SESSION['userid'];  else{
                             echo '<li ><a href="#"><span class="glyphicon glyphicon-off" ></span> 로그인 해주세요</a></li>';
                         }*/?>
 
@@ -85,7 +84,10 @@ echo'         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span c
                             if(!isset($_SESSION['userid'])){
                                 echo'         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-off"> Login</span> </a>';
                                 echo'           <ul class="dropdown-menu">';
-                            echo' <li><a href="login.php">Login</a></li>';
+                    //    echo' <li><a href="login.php" >Login</a></li>';
+
+
+
                             echo'  <li><a href="signUp.html">Join</a></li>';
 
                             echo'       </ul>';
@@ -97,6 +99,8 @@ echo'         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span c
     </div><!-- /navbar-inner -->
 </div>
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 <script src="js/bootstrap.min.js"></script>

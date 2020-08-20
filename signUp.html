@@ -7,6 +7,8 @@
         #700 {
             border-collapse: font-size: 9pt;
         }
+
+
     </style>
 </head>
 <body>
@@ -17,19 +19,19 @@
                     <td align="center"><b>[ 회원가입 ]</b></td>
                 </tr>
             </table>
-            <table width="700" height="600" cellpadding="0" style="border-collapse: font-size:9pt;">
+            <table width="700" height="600" cellpadding="0" >
                 <tr class="register" height="30">
                     <td width="5%" align="center">*</td>
                     <td width="15%">ID</td>
-                    <td><input type="text" name="id" size=""/> </td>
+                    <td><input onkeydown="onlyAlphabet(this)" name="id" type="text" name="id" required minlength="8" maxlength="10" > </td>
                 </tr>
                 <tr height="7">
-                    <td colspan="3"><hr /></td>
+                    <td colspan="3"><hr  /></td>
                 </tr>
                 <tr class="register" height="30">
                     <td width="5%" align="center">*</td>
                     <td width="15%">비밀번호</td>
-                    <td><input type="password" name="pw" id="pw" /></td>
+                    <td><input  onkeydown="onlyAlphabet(this)" type="password" name="pw" required  id="pw"minlength="8" maxlength="12" /></td>
                 </tr>
                 <tr height="7">
                     <td colspan="3"><hr /></td>
@@ -37,7 +39,7 @@
                 <tr class="register" height="30">
                     <td width="5%" align="center">*</td>
                     <td width="15%">비밀번호 확인</td>
-                    <td><input type="password" name="pwc" id="pwc" /></td>
+                    <td><input  onkeydown="onlyAlphabet(this)"  type="password" name="pwc"  required id="pwc" minlength="8" maxlength="12" /></td>
                 </tr>
                 <tr height="7">
                     <td colspan="3"><hr /></td>
@@ -45,7 +47,7 @@
                 <tr class="register" height="30">
                     <td width="5%" align="center">*</td>
                     <td width="15%">이름</td>
-                    <td><input type="text" name="name" /> </td>
+                    <td><input type="text" name="name" required  maxlength="5" > </td>
                 </tr>
                 <tr height="7">
                     <td colspan="3"><hr /></td>
@@ -53,7 +55,7 @@
                 <tr class="register" height="30">
                     <td width="5%" align="center">*</td>
                     <td width="15%">이메일</td>
-                    <td><input type="text" name="email" /> </td>
+                    <td><input type="email" name="email" /> </td>
                 </tr>
                 <tr height="7">
                     <td colspan="3"><hr /></td>
@@ -68,5 +70,10 @@
             </table>
         </form>
     </center>
+    <script>
+        function onlyAlphabet(ele) {
+            ele.value = ele.value.replace(/[^\\!-z]/gi,"");
+        }
+    </script>
 </body>
 </html>
